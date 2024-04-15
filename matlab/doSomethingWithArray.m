@@ -1,13 +1,14 @@
 function result = doSomethingWithArray()
-    libName = 'rust';
+    libName = 'matlab_rust_integration_demo';
+
+    array = [4, 7, 12];
 
     % Load the library
-    loadlibrary('../rust/target/debug/rust.dll', '../rust/bindings.h');
+    loadlibrary('../rust/target/debug/matlab_rust_integration_demo.dll', '../rust/bindings.h');
     
-    % Call the add_ffi functionz
-    result = calllib(libName, 'do_something_with_array', [4,7,12], 3);    
+    % Call the do_something_with_array_ffi function
+    result = calllib(libName, 'do_something_with_array_ffi', array, numel(array));
     
     % Unload the library
     unloadlibrary(libName);
 end
-

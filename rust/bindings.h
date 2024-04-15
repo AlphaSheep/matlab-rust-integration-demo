@@ -13,4 +13,4 @@ void free_string_pointer(char **pointer);
 
 double distance_between_ffi(const struct PointFFI *p1, const struct PointFFI *p2);
 
-double do_something_with_array(const double *values, unsigned long long n);
+double do_something_with_array_ffi(const double *values, unsigned long long n);
